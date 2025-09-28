@@ -1,0 +1,69 @@
+# Unity Scene File - Level 2: Warehouse Assault
+#
+# NOTE: This is a simplified, human-readable representation of a Unity scene.
+# Use it as a blueprint to reconstruct the scene in the Unity Editor.
+#
+# --- SCENE HIERARCHY BLUEPRINT ---
+#
+# 1. GameManager
+#    - Components:
+#      - GameManager.cs
+#
+# 2. UIManager
+#    - Components:
+#      - UIManager.cs
+#    - NOTE: Link your Canvas and UI elements here.
+#
+# 3. PlayerRig
+#    - Components:
+#      - SplinePathFollower.cs
+#        - Waypoints: [Path/WP_1, Path/WP_2, Path/WP_3, Path/WP_4]
+#    - Children:
+#      - MainCamera (Tag: MainCamera)
+#        - Components:
+#          - Camera
+#          - PlayerShooting.cs
+#            - PlayerCamera: (This MainCamera)
+#            - CurrentWeapon: (Pistol prefab)
+#
+# 4. Path (Parent GameObject for waypoints)
+#    - Children:
+#      - WP_1 (Position: 0, 3, 0)
+#      - WP_2 (Position: 0, 3, 50)
+#      - WP_3 (Position: -40, 3, 50)
+#      - WP_4 (Position: -40, 3, 90)
+#
+# 5. EnemySpawnManager
+#    - Components:
+#      - EnemySpawnManager.cs
+#        - Waves:
+#          - Wave 1:
+#            - Name: "Entrance Breach"
+#            - EnemyPrefab: BasicThug
+#            - Count: 4
+#            - SpawnInterval: 1.8
+#            - SpawnPoints: [SpawnPoints/SP_Door_1, SpawnPoints/SP_Catwalk_1]
+#          - Wave 2:
+#            - Name: "Shelving Ambush"
+#            - EnemyPrefab: ShieldEnemy (Assign new prefab)
+#            - Count: 3
+#            - SpawnInterval: 2.5
+#            - SpawnPoints: [SpawnPoints/SP_Shelves_1, SpawnPoints/SP_Shelves_2, SpawnPoints/SP_Shelves_3]
+#
+# 6. SpawnPoints (Parent GameObject)
+#    - Children:
+#      - SP_Door_1 (Position: 10, 1, 30)
+#      - SP_Catwalk_1 (Position: -15, 8, 45)
+#      - SP_Shelves_1 (Position: -30, 1, 60)
+#      - SP_Shelves_2 (Position: -30, 1, 70)
+#      - SP_Shelves_3 (Position: -50, 1, 65)
+#
+# 7. Environment
+#    - NOTE: Add your 3D models for the warehouse, crates, shelves, etc.
+#
+# 8. _PREFABS_TO_CREATE_
+#    - NOTE: In addition to the BasicThug and Pistol prefabs...
+#    - ShieldEnemyPrefab:
+#      - Create a new enemy prefab, perhaps with higher health in its EnemyAI component.
+#
+# --- END OF BLUEPRINT ---

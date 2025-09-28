@@ -1,0 +1,69 @@
+# Unity Scene File - Level 3: Dockside Ambush
+#
+# NOTE: This is a simplified, human-readable representation of a Unity scene.
+# Use it as a blueprint to reconstruct the scene in the Unity Editor.
+#
+# --- SCENE HIERARCHY BLUEPRINT ---
+#
+# 1. GameManager
+#    - Components:
+#      - GameManager.cs
+#
+# 2. UIManager
+#    - Components:
+#      - UIManager.cs
+#    - NOTE: Link your Canvas and UI elements here.
+#
+# 3. PlayerRig
+#    - Components:
+#      - SplinePathFollower.cs
+#        - Waypoints: [Path/WP_1, Path/WP_2, Path/WP_3, Path/WP_4]
+#    - Children:
+#      - MainCamera (Tag: MainCamera)
+#        - Components:
+#          - Camera
+#          - PlayerShooting.cs
+#            - PlayerCamera: (This MainCamera)
+#            - CurrentWeapon: (Pistol prefab or another weapon)
+#
+# 4. Path (Parent GameObject for waypoints)
+#    - Children:
+#      - WP_1 (Position: 0, 4, 0)
+#      - WP_2 (Position: 50, 4, 20)
+#      - WP_3 (Position: 50, 4, 80)
+#      - WP_4 (Position: 0, 4, 100)
+#
+# 5. EnemySpawnManager
+#    - Components:
+#      - EnemySpawnManager.cs
+#        - Waves:
+#          - Wave 1:
+#            - Name: "Shipping Containers"
+#            - EnemyPrefab: BasicThug
+#            - Count: 5
+#            - SpawnInterval: 1.5
+#            - SpawnPoints: [SpawnPoints/SP_Container_1, SpawnPoints/SP_Container_2, SpawnPoints/SP_Container_3]
+#          - Wave 2:
+#            - Name: "Crane Attack"
+#            - EnemyPrefab: SniperEnemy (Assign new prefab)
+#            - Count: 2
+#            - SpawnInterval: 3.0
+#            - SpawnPoints: [SpawnPoints/SP_Crane_1, SpawnPoints/SP_Crane_2]
+#
+# 6. SpawnPoints (Parent GameObject)
+#    - Children:
+#      - SP_Container_1 (Position: 20, 1, 30)
+#      - SP_Container_2 (Position: 30, 1, 45)
+#      - SP_Container_3 (Position: 20, 8, 40) # On top of a container
+#      - SP_Crane_1 (Position: 60, 15, 70) # High up on a crane
+#      - SP_Crane_2 (Position: 40, 15, 90) # High up on another crane
+#
+# 7. Environment
+#    - NOTE: Add your 3D models for the docks, cranes, shipping containers, water, etc.
+#
+# 8. _PREFABS_TO_CREATE_
+#    - NOTE: In addition to previous prefabs...
+#    - SniperEnemyPrefab:
+#      - Create a new enemy prefab. In its EnemyAI component, you might want to set a longer `attackWindUpTime` to simulate aiming.
+#
+# --- END OF BLUEPRINT ---
